@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add a note from JSON</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			console.log($('#textarea').val());
+			$.ajax({
+				url : "/rest/add",
+				type : "post",
+				contentType : "application/json",
+				data : $('#textarea').val(),
+				dataType : 'json'
+			});
+			$('#textarea').val('');
+		});
+	});
+</script>
+</head>
+<body>
+
+	<h1>Add a note</h1>
+
+	placeholder = { id : &#34;123&#34; , author : &#34;123&#34; , priority: &#34;10&#34; , star : &#34;3&#34; , content : &#34;Annamo a venne 'r pesce&#34; }
+	<br>
+
+	<input id="textarea" style="width: 80%;" name="textarea" type="text"
+		placeholder="{ id : &#34;123&#34; , author : &#34;123&#34; , priority : &#34;10&#34; ,  star : &#34;3&#34; ,  content : &#34;Annamo a venne 'r pesce&#34; }" />
+
+	<button>Add a new entity</button>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<display-name>rest-server-gae-test</display-name>
+
+	<servlet>
+		<servlet-name>Notes Servlets</servlet-name>
+		<servlet-class>org.apache.wink.server.internal.servlet.RestServlet</servlet-class>
+		<init-param>
+			<param-name>applicationConfigLocation</param-name>
+			<param-value>/WEB-INF/application</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Notes Servlets</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MemcacheStatsServlet</servlet-name>
+		<servlet-class>com.googlecode.objectify.util.MemcacheStatsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MemcacheStatsServlet</servlet-name>
+		<url-pattern>/memcstats</url-pattern>
+	</servlet-mapping>
+
+</web-app>

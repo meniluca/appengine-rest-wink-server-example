@@ -1,0 +1,4 @@
+it.uniroma3.dia.rest.NotesRetrieveHandler
+it.uniroma3.dia.rest.NotesPersisteHandler
+it.uniroma3.dia.rest.JsonNotesRetrieveHandler
+it.uniroma3.dia.rest.HelloWorldServlet
